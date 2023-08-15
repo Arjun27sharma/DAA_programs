@@ -8,67 +8,6 @@ bool visited[MAX_NODES];
 int queue[MAX_NODES];
 int front = -1, rear = -1;
 
-// basic enqueue function
-void enqueue(int node)
-{
-    if (rear == MAX_NODES - 1)
-    {
-        printf("Queue is full\n");
-    }
-    else
-    {
-        if (front == -1)
-        {
-            front = 0;
-        }
-        rear++;
-        queue[rear] = node;
-    }
-}
-
-int dequeue()
-{
-    if (front == -1)
-    {
-        printf("Queue is empty\n");
-        return -1;
-    }
-    else
-    {
-        int node = queue[front];
-        front++;
-        if (front > rear)
-        {
-            front = rear = -1;
-        }
-        return node;
-    }
-}
-
-void bfs(int start, int nodes)
-{
-    enqueue(start);
-    visited[start] = true;
-
-    printf("Reachable nodes using BFS: ");
-
-    while (front != -1)
-    {
-        int current = dequeue();
-        printf("%d ", current);
-
-        for (int i = 0; i < nodes; i++)
-        {
-            if (graph[current][i] == 1 && !visited[i])
-            {
-                enqueue(i);
-                visited[i] = true;
-            }
-        }
-    }
-
-    printf("\n");
-}
 
 // DFS Checking connectivity method
 void dfs(int node, int nodes)
@@ -121,7 +60,6 @@ int main()
     printf("Enter the starting node : ");
     scanf("%d", &start);
 
-    bfs(start, nodes);
 
     if (is_connected(nodes))
     {
