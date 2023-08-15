@@ -58,5 +58,4 @@ int main(){
     colorGraph(0);
 
     return 0;
-    //
 }
