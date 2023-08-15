@@ -28,3 +28,4 @@ void unionSets(int i, int j){
 
     parent[a] = b;
 }
+
