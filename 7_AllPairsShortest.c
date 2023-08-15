@@ -7,7 +7,7 @@ int graph[MAX_NODES][MAX_NODES];
 int dist[MAX_NODES][MAX_NODES];
 int numVertices;
 
-// Initialize the distance matrix with directed edge weights
+// Initialize the distance matrix with directed edge weight
 void initializeDist()
 {
     for (int i = 0; i < numVertices; i++)
